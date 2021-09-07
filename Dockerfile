@@ -7,5 +7,5 @@ RUN apt-get update -y \
         cmake cargo rustc \
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
     
