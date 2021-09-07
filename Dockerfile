@@ -5,5 +5,7 @@ FROM dclong/ubuntu_b
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         cmake cargo rustc \
-    && apt-get autoremove \
-    && apt-get clean
+    && apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
+    
