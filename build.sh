@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker build -t dclong/rust .
+docker pull dclong/ubuntu_b:next
+docker build -t dclong/rust:next .
