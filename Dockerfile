@@ -4,7 +4,7 @@ FROM dclong/ubuntu_b
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        cmake \
+        cmake gcc g++ \
     && /scripts/sys/purge_cache.sh
     
 ENV PATH=/root/.cargo/bin:$PATH
