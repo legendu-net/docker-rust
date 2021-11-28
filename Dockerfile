@@ -2,9 +2,7 @@
 FROM dclong/base
 # GIT: https://github.com/dclong/docker-base.git
 
-RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends \
-        cmake gcc g++ \
+RUN yum install cmake gcc \
     && /scripts/sys/purge_cache.sh
     
 ENV PATH=/root/.cargo/bin:$PATH
