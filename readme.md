@@ -1,6 +1,6 @@
 # dclong/rust [@DockerHub](https://hub.docker.com/r/dclong/rust/) | [@GitHub](https://github.com/dclong/docker-rust)
 
-Rust tools in Docker. 
+Rust in Docker. 
 
 ## Prerequisite
 
