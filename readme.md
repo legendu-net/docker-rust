@@ -1,6 +1,6 @@
 # dclong/rust [@DockerHub](https://hub.docker.com/r/dclong/rust/) | [@GitHub](https://github.com/dclong/docker-rust)
 
-Rust tools in Docker. 
+Rust in Docker. 
 
 ## Prerequisite
 
@@ -27,7 +27,7 @@ docker run -it --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/rust /command/to/run
+    dclong/rust /scripts/sys/init.sh -u -e /bin/bash
 ```
 The following command (only works on Linux) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -43,7 +43,7 @@ docker run -it --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/rust /command/to/run
+    dclong/rust /scripts/sys/init.sh -u -e /bin/bash
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
