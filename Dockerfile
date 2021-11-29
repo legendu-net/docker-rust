@@ -2,7 +2,7 @@
 FROM dclong/base
 # GIT: https://github.com/dclong/docker-base.git
 
-RUN yum install cmake gcc \
+RUN yum install -y cmake gcc \
     && /scripts/sys/purge_cache.sh
     
 ENV PATH=/root/.cargo/bin:$PATH
