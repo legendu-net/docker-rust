@@ -7,4 +7,5 @@ RUN yum install -y cmake gcc \
     && /scripts/sys/purge_cache.sh
     
 ENV PATH=/root/.cargo/bin:$PATH
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y \
+    && chmod -R 755 /root
