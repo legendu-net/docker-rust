@@ -2,6 +2,7 @@
 FROM dclong/base
 # GIT: https://github.com/dclong/docker-base.git
 
+WORKDIR /workdir
 COPY scripts /scripts
 RUN yum install -y cmake gcc \
     && /scripts/sys/purge_cache.sh
