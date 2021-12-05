@@ -8,5 +8,4 @@ RUN yum install -y cmake gcc \
     
 ENV HOME=/root PATH=/root/.cargo/bin:$PATH
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y \
-    && mkdir /root/.rustup \
     && chmod -R 777 /root/
