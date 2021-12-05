@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker pull dclong/ubuntu_b:next
-docker build -t dclong/rust:next .
+docker pull dclong/base:centos7.6
+docker build -t dclong/rust:centos7.6 .
