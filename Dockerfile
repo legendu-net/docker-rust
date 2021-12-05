@@ -3,7 +3,6 @@ FROM dclong/base
 # GIT: https://github.com/dclong/docker-base.git
 
 WORKDIR /workdir
-COPY scripts /scripts
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         cmake gcc g++ \
