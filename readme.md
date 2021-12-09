@@ -18,32 +18,24 @@ The following command starts a container
 and mounts the current working directory and `/home` on the host machine 
 to `/workdir` and `/home_host` in the container respectively.
 ```
-docker run -it --init \
+docker run -u `id -u`:`id -g` -it --init \
     --hostname rust \
     --log-opt max-size=50m \
-    -e DOCKER_USER=$(id -un) \
-    -e DOCKER_USER_ID=$(id -u) \
-    -e DOCKER_PASSWORD=$(id -un) \
-    -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/rust /scripts/sys/init.sh -u -e /bin/bash
+    dclong/rust /bin/bash
 ```
 The following command (only works on Linux) does the same as the above one 
 except that it limits the use of CPU and memory.
 ```
-docker run -it --init \
+docker run -u `id -u`:`id -g` -it --init \
     --hostname rust \
     --log-opt max-size=50m \
     --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
     --cpus=$(($(nproc) - 1)) \
-    -e DOCKER_USER=$(id -un) \
-    -e DOCKER_USER_ID=$(id -u) \
-    -e DOCKER_PASSWORD=$(id -un) \
-    -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/rust /scripts/sys/init.sh -u -e /bin/bash
+    dclong/rust /bin/bash
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
