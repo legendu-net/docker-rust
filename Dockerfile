@@ -5,7 +5,7 @@ FROM dclong/base
 WORKDIR /workdir
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        cmake gcc g++ \
+        cmake gcc g++ build-essential \
     && /scripts/sys/purge_cache.sh
     
 ENV HOME=/root PATH=/root/.cargo/bin:$PATH
