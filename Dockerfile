@@ -1,6 +1,6 @@
 # NAME: dclong/rust
 FROM dclong/base
-# GIT: https://github.com/dclong/docker-base.git
+# GIT: https://github.com/legendu-net/docker-base.git
 
 WORKDIR /workdir
 RUN apt-get update -y \
