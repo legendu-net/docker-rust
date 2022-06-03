@@ -2,7 +2,6 @@
 FROM dclong/base
 # GIT: https://github.com/legendu-net/docker-base.git
 
-WORKDIR /workdir
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         cmake gcc g++ build-essential \
