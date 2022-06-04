@@ -4,7 +4,7 @@ FROM dclong/base
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        cmake gcc g++ build-essential \
+        pkg-config libssl-dev cmake gcc g++ build-essential \
     && /scripts/sys/purge_cache.sh
     
 ARG ver=1.61.0
@@ -16,7 +16,7 @@ RUN curl -sSL https://static.rust-lang.org/dist/rust-${ver}-x86_64-unknown-linux
     && curl -sSL https://static.rust-lang.org/dist/rustc-${ver}-src.tar.gz -o /tmp/rust.tar.gz \
     && mkdir -p /usr/local/lib/rustlib/src/rust \
     && tar -zxf /tmp/rust.tar.gz -C /usr/local/lib/rustlib/src/rust --strip-components=1 \
-    && cargo install cargo-cache \
-    && mv /root/.cargo/bin/cargo-cache /usr/local/bin/ \
+    && cargo install cargo-cache sccache \
+    && mv /root/.cargo/bin/{cargo-cache,sccache} /usr/local/bin/ \
     && /scripts/sys/purge_cache.sh
 
