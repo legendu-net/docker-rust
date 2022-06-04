@@ -4,7 +4,7 @@ FROM dclong/base
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        cmake gcc g++ build-essential \
+        pkg-config libssl-dev cmake gcc g++ build-essential \
     && /scripts/sys/purge_cache.sh
     
 ARG ver=1.61.0
