@@ -10,7 +10,7 @@ RUN apt-get update -y \
 ARG ver=1.61.0
 #SHELL ["/bin/bash", "-O", "extglob", "-c"]
 RUN curl -sSL https://static.rust-lang.org/dist/rust-${ver}-x86_64-unknown-linux-gnu.tar.gz -o /tmp/rust.tar.gz \
-    && tar -zxvf /tmp/rust.tar.gz -C /tmp/ \
+    && tar -zxf /tmp/rust.tar.gz -C /tmp/ \
     && /tmp/rust-${ver}-x86_64-unknown-linux-gnu/install.sh --without=rust-demangler-preview,rls-preview,rust-analysis-x86_64-unknown-linux-gnu \
     && rm -rf /usr/local/lib/rustlib/!(etc|src|x86_64-unknown-linux-gnu) \
     && curl -sSL https://static.rust-lang.org/dist/rustc-${ver}-src.tar.gz -o /tmp/rust.tar.gz \
