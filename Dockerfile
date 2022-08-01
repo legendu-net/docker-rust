@@ -11,6 +11,5 @@ ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/ca
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y \
     && rustup component add rust-src rustfmt clippy \
     && cargo install cargo-cache sccache \
-    && mv /root/.cargo/bin/{cargo-cache,sccache} /usr/local/bin/ \
     && /scripts/sys/purge_cache.sh
 
