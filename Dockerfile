@@ -2,8 +2,8 @@
 FROM dclong/base
 # GIT: https://github.com/legendu-net/docker-base.git
 
-RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get -y update \
+    && apt-get -y install --no-install-recommends \
         pkg-config libssl-dev cmake gcc g++ build-essential \
     && /scripts/sys/purge_cache.sh
 
